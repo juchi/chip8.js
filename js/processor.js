@@ -109,6 +109,7 @@ chip8.Proc.prototype.stop = function() {
 };
 
 chip8.Proc.prototype.runInstruction = function(instructionId, opcode) {
+    // extract the bytes from the opcode
     var bytes = [opcode & 0x00F, (opcode & 0x0F0) >> 4, (opcode & 0xF00) >> 8];
     switch (instructionId) {
     case 0: // 0NNN
@@ -307,6 +308,7 @@ chip8.Proc.prototype.fillMemory = function(data) {
 };
 
 chip8.Proc.prototype.instructions = {
+    // ids are fixed par from the opcode (zeros are variable bytes)
     ids: [
         0xFFFF,
         0x00E0,
@@ -344,6 +346,7 @@ chip8.Proc.prototype.instructions = {
         0xF055,
         0xF065
     ],
+    // masks are signature for each opcode
     masks: [
         0x0000,
         0xFFFF,
