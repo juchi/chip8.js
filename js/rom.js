@@ -1,8 +1,6 @@
 var chip8 = chip8 || {};
 
-chip8.Rom = function() {
-
-}
+chip8.Rom = function() {};
 
 chip8.Rom.prototype.requestFile = function(filename, cb) {
     var xhr = new XMLHttpRequest();
@@ -14,7 +12,7 @@ chip8.Rom.prototype.requestFile = function(filename, cb) {
     };
 
     xhr.send();
-}
+};
 
 chip8.Rom.prototype.load = function(file, cb) {
     var fr = new FileReader();
@@ -26,4 +24,4 @@ chip8.Rom.prototype.load = function(file, cb) {
         console.log('Error reading the file', e.target.error.code)
     };
     fr.readAsArrayBuffer(file);
-}
+};

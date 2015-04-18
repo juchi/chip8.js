@@ -82,7 +82,7 @@ chip8.Proc.prototype.updateTimers = function() {
     if (this.soundTimer > 0) {
         this.soundTimer--;
     }
-}
+};
 
 chip8.Proc.prototype.getOpcode = function() {
     var op = (this.memory[this.pc] << 8) + this.memory[this.pc + 1];
@@ -382,4 +382,3 @@ chip8.Proc.prototype.instructions = {
         0xF0FF
     ]
 };
-

@@ -8,7 +8,6 @@ chip8.Application = function() {
     this.rom = new chip8.Rom();
 
     var that = this;
-    //this.rom.requestFile('GAMES/TEST/IBM.ch8', that.startRom);
     document.getElementById('file').addEventListener('change', function(e){
         that.rom.load(e.target.files[0], that.startRom.bind(that));
     })
@@ -42,4 +41,4 @@ chip8.Application.prototype.keyup = function(key) {
     this.proc.keys[key] = 0;
 };
 
-app = new chip8.Application();
+var app = new chip8.Application();

@@ -41,7 +41,6 @@ chip8.Screen.prototype.clear = function() {
 };
 
 chip8.Screen.prototype.drawPixel = function(x, y) {
-    if (typeof this.data[x] == "undefined") console.log('screen x', x, 'undefined');
     this.data[x][y] += 1;
     this.data[x][y] %= 2;
 
