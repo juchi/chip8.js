@@ -35,6 +35,8 @@ chip8.Proc.prototype.reset = function() {
         this.keys[i] = 0; // 0 is key up
     }
 
+    // chars are 5 lines height, each line 1 byte / 8 bit
+    // with the 4 first bits defining which pixel are lit for each line
     var baseChars = [
         0xF0,0x90,0x90,0x90,0xF0, // 0
         0x20,0x60,0x20,0x20,0x70, // 1
